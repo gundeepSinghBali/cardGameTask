@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/MainGame.gd" type="Script" id=2]
+
+[node name="MainGame" type="Node2D"]
+position = Vector2( 8, 8 )
+script = ExtResource( 2 )
+
+[node name="I dont Know" type="GridContainer" parent="."]
+margin_left = -200.0
+margin_right = 240.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 440, 600 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="Middle" type="GridContainer" parent="."]
+margin_left = 300.0
+margin_right = 740.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 300, 600 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="I know" type="GridContainer" parent="."]
+margin_left = 770.0
+margin_right = 1210.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 300, 600 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 509, 289 )
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Save Button" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 480.0
+margin_right = 128.0
+margin_bottom = 500.0
+rect_scale = Vector2( 5, 5 )
+text = "Save Button"
+
+[node name="Load Button" type="Button" parent="."]
+margin_left = 528.0
+margin_top = 472.0
+margin_right = 617.0
+margin_bottom = 492.0
+rect_scale = Vector2( 5, 5 )
+text = "Load Button"
+
+[node name="IdontKnow" type="RichTextLabel" parent="."]
+margin_left = 768.0
+margin_top = -80.0
+margin_right = 898.0
+margin_bottom = -56.0
+rect_scale = Vector2( 3, 3 )
+text = "I dont know"
+
+[node name="Iknow" type="RichTextLabel" parent="."]
+margin_left = -128.0
+margin_top = -88.0
+margin_right = -48.0
+margin_bottom = -48.0
+rect_scale = Vector2( 3, 3 )
+text = "I Know"
+
+[connection signal="pressed" from="Save Button" to="." method="_on_Save_Button_pressed"]
+[connection signal="pressed" from="Load Button" to="." method="_on_Load_Button_pressed"]
